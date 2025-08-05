@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: go-rejjmqbv
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: go-rejjmqbv 
+  name: go-rejjmqbv
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: go-rejjmqbv
+    weight: 100 
